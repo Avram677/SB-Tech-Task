@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Test</title>
+</head>
+<body>
+
+    <img id="logo" src="img\logo.png">
+    <div id="topdiv">
+        <br>
+        <br>
+        <h1 id="maintext">,גולשים יקרים</h1>
+        <br>
+        <h1 id="maintext">אנו נמצאים בתקופה מאתגרת מאוד בכל היבט אפשרי של חיינו.
+        ישיבה ממושכת בבית, המלווה בחוסר וודאות לגבי משך הזמן שלה וכן חשש לגבי המצב הבריאותי שלנו ושל היקרים לנו. שעות וימים רבים של חוסר מעש עלולים להביא אותנו לחוסר שליטה לגבי האוכל. ישנו סיכון אמיתי לעלייה לא נשלטת במשקל שבוודאי לא תיטיב עם התחושה הכללית שלנו. בעניין זה, אנו שמחים לשתף אתכם כתבות שיעזרו לכם לשמור על מצברוח חיובי ותזונה נכונה.
+        
+        בתקופה זו חשוב שכולנו נישמע להנחיות משרד הבריאות. לעדכונים והנחיות מיוחדות לחולי IBD אפשר להכנס לאתר העמותה דרך הקישור המופיע באתרנו, בלשונית - מידע שימושי.</h1>
+    </div>
+    <div class="text_from_db" style="color:red; text-align: center;"></div>
+    <div id="div2">
+        <h1 id="text2">עודף משקל והשמנה אצל חולי מחלות מעי דלקתיות</h1>
+        <span></span>
+        <h2 id="text3">?השמנה וקרוהן - מה קשור</h2>
+        <span></span>
+    </div>
+    <div id="buttons">
+        <button id="button1" onclick=>כפתור 1</button>
+        <span></span>        
+        <button id="button2" onclick=>כפתור 2</button>
+    </div>
+
+    <div class="Footer">        
+    
+        <button data-id="btn6" class="btn btn6"><div id="circle"></div><span>מדיניות פרטיות</span></button>
+        <button data-id="btn6" class="btn btn6"><div id="circle"></div><span>הסר מרשימת התפוצה</span></button>
+        <h2 class="AllRights">| כל הזכויות שמורות|</h2>
+
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script>
+
+$(document).ready( function(){
+
+    $.ajax({
+        url:"http://localhost:8081/getData",
+        method:"GET",
+        contentType: "application/json; charset=utf-8", 
+        "async": true,
+        "crossDomain": true,
+        success:function(response) {
+            $('.text_from_db').html(response)            
+       },
+       error:function(err){
+        console.log(err)
+       }
+
+      });
+
+})
+
+
+</script>
+</html>
